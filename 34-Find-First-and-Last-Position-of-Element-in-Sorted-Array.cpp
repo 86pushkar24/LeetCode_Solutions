@@ -81,7 +81,7 @@ public:
         if (nums.empty()) return {-1, -1};
 
         int lb = lowerbound(nums, target);
-        // Check if the lowerbound index actually points to the target
+        // Smart Implementations
         if (lb == nums.size() || nums[lb] != target) return {-1, -1};
 
         int ub = upperbound(nums, target) - 1;
