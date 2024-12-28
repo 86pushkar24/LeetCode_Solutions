@@ -31,3 +31,7 @@ public:
         return ans;
     }
 };
+
+// Side Note -->
+// the ans will always be in between 1 and the max_ele in arr...
+// as after dividing it by greater than it , the sum will be always be equal to sizeof(arr), so if sizeof(arr) > threshold then no answer would be possible.
