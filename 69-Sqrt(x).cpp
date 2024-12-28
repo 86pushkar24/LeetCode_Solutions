@@ -1,22 +1,14 @@
 class Solution {
 public:
-    int mySqrt(int n) {
-        if (n == 0 || n == 1) return n;  // Handle edge cases
-        
-        int low = 1, high = n;
-        int ans = 0;
-        while (low <= high) {
-            int mid = low + (high - low) / 2;
-            long long chk = 1LL * mid * mid; // Use long long to prevent overflow
-            
-            if (chk == n) {
-                return mid;
-            } else if (chk > n) {
-                high = mid - 1;
-            } else {
+    int mySqrt(int x) {
+        int low = 0, high = x, ans = 1;
+        while(low <= high){
+            long long mid = (low + high)/2;
+            if(mid * mid <= x){
                 ans = mid;
                 low = mid + 1;
             }
+            else high = mid -1;
         }
         return ans;
     }
