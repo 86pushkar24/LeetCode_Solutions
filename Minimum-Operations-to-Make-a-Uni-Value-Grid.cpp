@@ -9,7 +9,8 @@ public:
                 v.push_back(grid[i][j]);
             }
         }
-        sort(v.begin(), v.end());
+        // sort(v.begin(), v.end()); O(nlogn)
+        nth_element(v.begin(), v.begin() + (v.size() / 2), v.end()); // O(n)
         int median = v[v.size() / 2];
         int cnt = 0;
         for (int i = 0; i < v.size(); i++) {
